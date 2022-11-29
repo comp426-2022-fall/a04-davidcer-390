@@ -17,26 +17,26 @@ app.get('/app/', (req, res, next) => {
 app.get('/app/roll/', (req, res, next) => {
 	const sides = parseInt(req.query.sides) || 6
 	const dice = parseInt(req.query.dice) || 2
-	const rolles = parseInt(req.query.rolles) || 1
-	res.json(roll(sides, dice, rolles))
+	const rolls = parseInt(req.query.rolls) || 1
+	res.json(roll(sides, dice, rolls))
 })
 app.get('/app/roll/:sides/', (req, res, next) => {
 	const sides = parseInt(req.params.sides)
 	const dice = parseInt(req.query.dice) || 2
-	const rolles = parseInt(req.query.rolles) || 1
-	res.json(roll(sides, dice, rolles))
+	const rolls = parseInt(req.query.rolls) || 1
+	res.json(roll(sides, dice, rolls))
 })
 app.get('/app/roll/:sides/:dice', (req, res, next) => {
 	const sides = parseInt(req.params.sides)
 	const dice = parseInt(req.params.dice)
-	const rolles = parseInt(req.query.rolles) || 1
-	res.json(roll(sides, dice, rolles))
+	const rolls = parseInt(req.query.rolls) || 1
+	res.json(roll(sides, dice, rolls))
 })
 app.get('/app/roll/:sides/:dice/:rolls', (req, res, next) => {
 	const sides = parseInt(req.params.sides)
 	const dice = parseInt(req.params.dice)
-	const rolles = parseInt(req.params.rolles)
-	res.json(roll(sides, dice, rolles))
+	const rolls = parseInt(req.params.rolls)
+	res.json(roll(sides, dice, rolls))
 })
 app.get('*', (req, res, next) => {
 	res.status(404).send('404 NOT FOUND')
