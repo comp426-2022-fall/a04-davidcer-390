@@ -45,9 +45,9 @@ app.get('*', (req, res, next) => {
 
 
 app.post('/app/roll', (req, res, next) => {
-	const sides = req.body.sides || 6
-	const dice = req.body.dice || 2
-	const rolls = req.body.rolls || 1
+	const sides = parseInt(req.body.sides) || 6
+	const dice = parseInt(req.body.dice) || 2
+	const rolls = parseInt(req.body.rolls) || 1
 	res.json(roll(sides, dice, rolls))
 })
 app.post('*', (req, res, next) => {
