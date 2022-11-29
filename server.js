@@ -1,8 +1,11 @@
 import { roll } from './lib/roll.js'
 import express from 'express'
+import minimist from 'minimist'
+
+const port = minimist(process.argv.slice(2)).port || 5000
+
 const app = express()
 
-const port = 5000
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
